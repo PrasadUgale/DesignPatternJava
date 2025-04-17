@@ -1,0 +1,16 @@
+Field Injection means injecting dependencies directly into fields (i.e., class variables), usually using reflection under the hood.
+
+In Java, this is mostly used in frameworks like Spring, where a dependency is injected into a field annotated with @Autowired or other similar annotations.
+
+-> How it works under the hood:
+The Spring container scans all beans.
+
+It finds the @Autowired annotation on a private field.
+
+It uses Java reflection to:
+
+Set the field as accessible: field.setAccessible(true);
+
+Inject the required dependency directly into the field.
+
+Even though the field is private, Spring bypasses encapsulation using reflection.
